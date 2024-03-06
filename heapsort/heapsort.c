@@ -66,9 +66,6 @@ int main(void)
     int arr[] = {20, 18, 5, 14, 3, 2, 1, 11, 19, 20};
     unsigned int n = 10;
 
-    printf("%d\n", 1 << 1);
-    printf("%d\n", (1 << 1) + 1);
-
     for (unsigned int i = 0; i < n; i++)
     {
         printf("%d ", arr[i]);
