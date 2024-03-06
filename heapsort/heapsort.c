@@ -1,3 +1,7 @@
+/*
+    Some referenced from https://www.geeksforgeeks.org/heap-sort/
+*/
+
 #include <stdio.h>
 
 
