@@ -55,3 +55,4 @@ maxheap/maxheap
 minheap/minheap
 heapsort/heapsort
 .vscode/*
+/maxheap/.vs
