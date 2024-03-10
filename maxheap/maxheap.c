@@ -64,7 +64,7 @@ void _insertNode(int arr[], unsigned int index)
 void insertNode(int arr[], unsigned int* n, int Key)
 {
     printf("%u\n", *n);
-    *n += 1;
+    (*n)++;
     arr[*n - 1] = Key;
     printf("%u\n", *n);
     printHeap(arr, *n);
@@ -85,31 +85,19 @@ int main(void)
     int arr[MAX] = {20, 18, 5, 14, 3, 2, 1, 11, 19, 20};
     unsigned int n = 10;
 
-    for (unsigned int i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-
-    printf("\n");
+    printf("Origin: ");
+    printHeap(arr, n);
 
     maxheap(arr, n);
 
     printf("max heap: ");
-    for (unsigned int i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printHeap(arr, n);
 
     int key = 21;
     insertNode(arr, &n, key);
 
     printf("insert 21: ");
-    for (unsigned int i = 0; i < n; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+    printHeap(arr, n);
 
     return 0;
 }
