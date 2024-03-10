@@ -54,3 +54,4 @@ heapsort/heapsort
 maxheap/maxheap
 minheap/minheap
 heapsort/heapsort
+.vscode/*
