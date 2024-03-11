@@ -2,8 +2,30 @@
 
 #define MAX 1000
 
+void heapify(int arr[], unsigned int n, unsigned int i);
 
-void printHeap(int arr[], int size)
+
+int pop(int arr[], unsigned int* size)
+{
+    int item;
+
+    if ((*size) == 0) {
+        printf("heap is empty.\n");
+        return;
+    }
+
+    item = arr[0];
+
+    arr[0] = arr[(*size) - 1];
+    (*size)--;
+
+    heapify(arr, (*size), 0);
+
+    return item;
+}
+
+
+void printHeap(int arr[], unsigned int size)
 {
     printf("size: %d\n", size);
     for (int i = 0; i < size; i++)
@@ -14,12 +36,12 @@ void printHeap(int arr[], int size)
 }
 
 
-void heapify(int arr[], int n, int i)
+void heapify(int arr[], unsigned int n, unsigned int i)
 {
     int temp;
-    int right = (i << 1) + 2;
-    int left = (i << 1) + 1;
-    int max = i;
+    unsigned int right = (i << 1) + 2;
+    unsigned int left = (i << 1) + 1;
+    unsigned int max = i;
 
     if (left < n && arr[left] > arr[max])
     {
@@ -97,6 +119,10 @@ int main(void)
     insertNode(arr, &n, key);
 
     printf("insert 21: ");
+    printHeap(arr, n);
+
+
+    printf("pop max: %d\n", pop(arr, &n));
     printHeap(arr, n);
 
     return 0;
