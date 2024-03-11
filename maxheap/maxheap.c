@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <limits.h>
 
 #define MAX 1000
+#define __HEAP_EMPTY__ __INT_MAX__ 
 
 void heapify(int arr[], unsigned int n, unsigned int i);
 
@@ -11,7 +13,7 @@ int pop(int arr[], unsigned int* size)
 
     if ((*size) == 0) {
         printf("heap is empty.\n");
-        return;
+        return __HEAP_EMPTY__;
     }
 
     item = arr[0];
